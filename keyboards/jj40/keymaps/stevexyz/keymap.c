@@ -22,6 +22,12 @@
  */
 
 
+/*
+ * Nice to have:
+ * - tap dancing (p=backspace, q=escape, a=tab, vowel=accentedletter and same for consonant as the french c)
+ */
+
+
 #include QMK_KEYBOARD_H
 
 enum layers {
@@ -83,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  | Enter|      |
- * |      | Shift| FnNav|NumSym| ____ | OSkey| OSkey| ____ | FnNav|NumSym| Shift|      |
+ * |      | Shift| FnNav|NumSym| Shift| OSkey| OSkey| Shift| FnNav|NumSym| Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |      |   Z  |   X  |   C  |   V  |   B  |   N  |   M  | Space|      |      |
@@ -93,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_HOME] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, XXXXXXX, 
-         XXXXXXX, MT(MOD_LSFT, KC_A), LT(LAYER_FUNC, KC_S), LT(LAYER_NUMSYM, KC_D), KC_F, MT(MOD_LGUI, KC_G), MT(MOD_RGUI, KC_H), KC_J, LT(LAYER_FUNC, KC_K), LT(LAYER_NUMSYM, KC_L), MT(MOD_RSFT, KC_ENT), XXXXXXX,
+         XXXXXXX, MT(MOD_LSFT, KC_A), LT(LAYER_FUNC, KC_S), LT(LAYER_NUMSYM, KC_D), MT(MOD_LSFT, KC_F), MT(MOD_LGUI, KC_G), MT(MOD_RGUI, KC_H), MT(MOD_RSFT, KC_J), LT(LAYER_FUNC, KC_K), LT(LAYER_NUMSYM, KC_L), MT(MOD_RSFT, KC_ENT), XXXXXXX,
          XXXXXXX, XXXXXXX, MT(MOD_LCTL, KC_Z), MT(MOD_LALT, KC_X), LT(LAYER_FUNC, KC_C), LT(LAYER_NUMSYM, KC_V), MT(MOD_LSFT, KC_B), MT(MOD_RALT, KC_N), MT(MOD_RCTL, KC_M), MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* Function and Navigation Layer
@@ -108,18 +114,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |  ESC | Home | PgDn | PgUp |  End | Left | Down |  Up  | Right| Baksp|      |
- * |      | Shift|xxxxxx|SysLay| ____ | ____ | ____ | ____ |xxxxxx|SysLay| Shift|      |
+ * |      | Shift| ____ |SysLay| Shift| OSkey| OSkey| Shift| ____ |SysLay| Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |      |
- * |      |      | Ctrl |  Alt |xxxxxx|SysLay| Shift|  Alt | Ctrl | Shift|      |      | 
+ * |      |      | Ctrl |  Alt | ____ |SysLay| Shift|  Alt | Ctrl | Shift|      |      | 
  * `-----------------------------------------------------------------------------------'
  */
   [LAYER_FUNC] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, XXXXXXX,
-         XXXXXXX, MT(MOD_LSFT, KC_ESC), KC_HOME, LT(LAYER_SYST, KC_PGDN), KC_PGUP, KC_END, KC_LEFT, KC_DOWN, KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC), XXXXXXX,
-         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_TRNS, MO(LAYER_SYST), KC_LSFT, KC_RALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, MT(MOD_LSFT, KC_ESC), KC_HOME, LT(LAYER_SYST, KC_PGDN), MT(MOD_LSFT, KC_PGUP), MT(MOD_LGUI, KC_END), MT(MOD_RGUI, KC_LEFT), MT(MOD_RSFT, KC_DOWN), KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC), XXXXXXX,
+         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, MO(LAYER_SYST), KC_LSFT, KC_RALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* Number and Symbols Layer
  * ,-----------------------------------------------------------------------------------.
@@ -133,18 +139,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |   ~  |   _  |   +  |   {  |   }  |  |   |   :  |   "  |      |      |
  * |      |  TAB |   `  |   -  |   =  |   [  |   ]  |  \   |   ;  |   '  |      |      |
- * |      | Shift|SysLay|xxxxxx| ____ | ____ | ____ | ____ |SysLay|xxxxxx| Shift|      |
+ * |      | Shift|SysLay| ____ | Shift| OSkey| OSkey| Shift|SysLay| ____ | Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |   <  |   >  |   ?  |      |      |      |
  * |      |      | ____ | ____ | ____ | ____ |   ,  |   .  |   /  | ____ |      |      |
- * |      |      | Ctrl |  Alt |SysLay|xxxxxx| Shift| ____ | ____ | Shift|      |      |
+ * |      |      | Ctrl |  Alt |SysLay| ____ | Shift|  Alt | Ctrl | Shift|      |      |
  * `-----------------------------------------------------------------------------------'
  */
   [LAYER_NUMSYM] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX,
-         XXXXXXX, MT(MOD_LSFT, KC_TAB), LT(LAYER_SYST, KC_GRV), KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS, LT(LAYER_SYST, KC_SCLN), KC_QUOT, MT(MOD_RSFT, KC_DEL), XXXXXXX,
-         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, MO(LAYER_SYST), KC_TRNS, MT(MOD_LSFT, KC_COMM), KC_DOT, KC_SLSH, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, MT(MOD_LSFT, KC_TAB), LT(LAYER_SYST, KC_GRV), KC_MINS, MT(MOD_LSFT, KC_EQL), MT(MOD_LGUI, KC_LBRC), MT(MOD_RGUI, KC_RBRC), MT(MOD_RSFT, KC_BSLS), LT(LAYER_SYST, KC_SCLN), KC_QUOT, MT(MOD_RSFT, KC_DEL), XXXXXXX,
+         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, MO(LAYER_SYST), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_RALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* System Layer
  * ,-----------------------------------------------------------------------------------.
@@ -169,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_F11, KC_F12, TG(LAYER_NUMONLY), TG(LAYER_LIGHTS), KC_NO, KC_NO, KC_NO, KC_NO, TG(LAYER_MOUSE), KC_BSPC, XXXXXXX,
          XXXXXXX, MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_NO, MT(MOD_RSFT, KC_INS), XXXXXXX,
-         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_TRNS, KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_PSCR, KC_SLCK, KC_PAUS, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* Numeric Keypad
  * ,-----------------------------------------------------------------------------------.
