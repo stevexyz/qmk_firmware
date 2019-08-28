@@ -45,19 +45,21 @@ enum custom_keycodes {
 };
 
 enum {
-  TD_ENT_BSPC = 0,
-  TD_KPENT_BSPC,
-  TD_E_GRAVE,
+  TD_P_BSPC = 0,
+  TD_Q_ESC,
+  TD_A_TAB,
   TD_A_GRAVE,
+  TD_E_GRAVE,
+  TD_E_ACUTE,
+  TD_I_GRAVE,
   TD_O_GRAVE,
   TD_U_GRAVE,
-  TD_I_GRAVE,
-  TD_E_ACUTE,
 };
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_ENT_BSPC] = ACTION_TAP_DANCE_DOUBLE(KC_ENT, KC_BSPC),
-  [TD_KPENT_BSPC] = ACTION_TAP_DANCE_DOUBLE(KC_KP_ENTER, KC_BSPC),
-  [TD_E_GRAVE] = ACTION_TAP_DANCE_DOUBLE(KC_E, KC_E),
+  [TD_P_BSPC] = ACTION_TAP_DANCE_DOUBLE(KC_P, KC_BSPC),
+  [TD_Q_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
+  [TD_A_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_A, KC_TAB),
+  //[TD_E_GRAVE] = ACTION_TAP_DANCE_DOUBLE(KC_E, KC_EGRAVE),
 };
 
 
@@ -89,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  | Enter|      |
- * |      | Shift| FnNav|NumSym| Shift| OSkey| OSkey| Shift| FnNav|NumSym| Shift|      |
+ * |      | Shift| FnNav|NumSym| AltGr| OSkey| OSkey| AltGr| FnNav|NumSym| Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |      |   Z  |   X  |   C  |   V  |   B  |   N  |   M  | Space|      |      |
@@ -99,8 +101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_HOME] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, XXXXXXX, 
-         XXXXXXX, MT(MOD_LSFT, KC_A), LT(LAYER_FUNC, KC_S), LT(LAYER_NUMSYM, KC_D), MT(MOD_LSFT, KC_F), MT(MOD_LGUI, KC_G), MT(MOD_RGUI, KC_H), MT(MOD_RSFT, KC_J), LT(LAYER_FUNC, KC_K), LT(LAYER_NUMSYM, KC_L), MT(MOD_RSFT, KC_ENT), XXXXXXX,
-         XXXXXXX, XXXXXXX, MT(MOD_LCTL, KC_Z), MT(MOD_LALT, KC_X), LT(LAYER_FUNC, KC_C), LT(LAYER_NUMSYM, KC_V), MT(MOD_LSFT, KC_B), MT(MOD_RALT, KC_N), MT(MOD_RCTL, KC_M), MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, MT(MOD_LSFT, KC_A), LT(LAYER_FUNC, KC_S), LT(LAYER_NUMSYM, KC_D), MT(MOD_RALT, KC_F), MT(MOD_LGUI, KC_G), MT(MOD_RGUI, KC_H), MT(MOD_RALT, KC_J), LT(LAYER_FUNC, KC_K), LT(LAYER_NUMSYM, KC_L), MT(MOD_RSFT, KC_ENT), XXXXXXX,
+         XXXXXXX, XXXXXXX, MT(MOD_LCTL, KC_Z), MT(MOD_LALT, KC_X), LT(LAYER_FUNC, KC_C), LT(LAYER_NUMSYM, KC_V), MT(MOD_LSFT, KC_B), MT(MOD_LALT, KC_N), MT(MOD_RCTL, KC_M), MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* Function and Navigation Layer
  * ,-----------------------------------------------------------------------------------.
@@ -114,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |  ESC | Home | PgDn | PgUp |  End | Left | Down |  Up  | Right| Baksp|      |
- * |      | Shift| ____ |SysLay| Shift| OSkey| OSkey| Shift| ____ |SysLay| Shift|      |
+ * |      | Shift| ____ |SysLay| AltGr| OSkey| OSkey| AltGr| ____ |SysLay| Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |      |
@@ -124,8 +126,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_FUNC] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, XXXXXXX,
-         XXXXXXX, MT(MOD_LSFT, KC_ESC), KC_HOME, LT(LAYER_SYST, KC_PGDN), MT(MOD_LSFT, KC_PGUP), MT(MOD_LGUI, KC_END), MT(MOD_RGUI, KC_LEFT), MT(MOD_RSFT, KC_DOWN), KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC), XXXXXXX,
-         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, MO(LAYER_SYST), KC_LSFT, KC_RALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, MT(MOD_LSFT, KC_ESC), KC_HOME, LT(LAYER_SYST, KC_PGDN), MT(MOD_RALT, KC_PGUP), MT(MOD_LGUI, KC_END), MT(MOD_RGUI, KC_LEFT), MT(MOD_RALT, KC_DOWN), KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC), XXXXXXX,
+         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, MO(LAYER_SYST), KC_LSFT, KC_LALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* Number and Symbols Layer
  * ,-----------------------------------------------------------------------------------.
@@ -139,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |   ~  |   _  |   +  |   {  |   }  |  |   |   :  |   "  |      |      |
  * |      |  TAB |   `  |   -  |   =  |   [  |   ]  |  \   |   ;  |   '  |      |      |
- * |      | Shift|SysLay| ____ | Shift| OSkey| OSkey| Shift|SysLay| ____ | Shift|      |
+ * |      | Shift|SysLay| ____ | AltGr| OSkey| OSkey| AltGr|SysLay| ____ | Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |   <  |   >  |   ?  |      |      |      |
  * |      |      | ____ | ____ | ____ | ____ |   ,  |   .  |   /  | ____ |      |      |
@@ -149,8 +151,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_NUMSYM] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX,
-         XXXXXXX, MT(MOD_LSFT, KC_TAB), LT(LAYER_SYST, KC_GRV), KC_MINS, MT(MOD_LSFT, KC_EQL), MT(MOD_LGUI, KC_LBRC), MT(MOD_RGUI, KC_RBRC), MT(MOD_RSFT, KC_BSLS), LT(LAYER_SYST, KC_SCLN), KC_QUOT, MT(MOD_RSFT, KC_DEL), XXXXXXX,
-         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, MO(LAYER_SYST), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_RALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, MT(MOD_LSFT, KC_TAB), LT(LAYER_SYST, KC_GRV), KC_MINS, MT(MOD_RALT, KC_EQL), MT(MOD_LGUI, KC_LBRC), MT(MOD_RGUI, KC_RBRC), MT(MOD_RALT, KC_BSLS), LT(LAYER_SYST, KC_SCLN), KC_QUOT, MT(MOD_RSFT, KC_DEL), XXXXXXX,
+         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, MO(LAYER_SYST), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_LALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* System Layer
  * ,-----------------------------------------------------------------------------------.
@@ -159,11 +161,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | F11  | F12  |NumLay|LghLay| ____ | ____ | ____ | ____ |MouLay|Backsp|      |
+ * |      | F11  | F12  |NumLay|LghLay| ____ | ____ | Power|SysReq|MouLay|Backsp|      |
  * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | Caps | Mute | Vol- | Vol+ | Play | Next | ____ | ____ | ____ | Ins  |      |
+ * |      | Caps | Mute | Vol- | Vol+ | Play | Next | ____ | ____ |OSMenu| Ins  |      |
  * |      | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift|      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
@@ -173,8 +175,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LAYER_SYST] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         XXXXXXX, KC_F11, KC_F12, TG(LAYER_NUMONLY), TG(LAYER_LIGHTS), KC_NO, KC_NO, KC_NO, KC_NO, TG(LAYER_MOUSE), KC_BSPC, XXXXXXX,
-         XXXXXXX, MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_NO, MT(MOD_RSFT, KC_INS), XXXXXXX,
+         XXXXXXX, KC_F11, KC_F12, TG(LAYER_NUMONLY), TG(LAYER_LIGHTS), KC_NO, KC_NO, KC_POWER, KC_SYSREQ, TG(LAYER_MOUSE), KC_BSPC, XXXXXXX,
+         XXXXXXX, MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_APP, MT(MOD_RSFT, KC_INS), XXXXXXX,
          XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_PSCR, KC_SLCK, KC_PAUS, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 /* Numeric Keypad
@@ -239,7 +241,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      | Left | Down | Right| Whl- | ____ | ____ | ____ | ____ | ____ | Enter|      |
- * |      | ____ | ____ | ____ | ____ | OSkey| OSkey| ____ | ____ | ____ | ____ |      |
+ * |      | ____ | ____ | ____ | ____ | OSkey| OSkey| AltGr| ____ | ____ | ____ |      |
  * |------+------+------+------+------+------+------|------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Space|      |      |
@@ -249,14 +251,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_MOUSE] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
          XXXXXXX, KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, KC_MS_WH_UP, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_NO, TG(LAYER_MOUSE), KC_NO, XXXXXXX,
-         XXXXXXX, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_LGUI, KC_RGUI, KC_NO, KC_NO, KC_NO, KC_ENT, XXXXXXX,
-         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_LSFT, KC_RALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
+         XXXXXXX, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_LGUI, KC_RGUI, KC_RALT, KC_NO, KC_NO, KC_ENT, XXXXXXX,
+         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_LSFT, KC_LALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
 };
 
 
 void matrix_init_user(void) {
-  // set num lock on at start independently of state (for numonly layer to work)
+  // eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
+  // set num lock on at start (for numonly layer to work)
   if (!(host_keyboard_leds() & (1<<USB_LED_NUM_LOCK))) {
       SEND_STRING(SS_TAP(X_NUMLOCK)); //register_code(KC_NUMLOCK); unregister_code(KC_NUMLOCK);
   }
