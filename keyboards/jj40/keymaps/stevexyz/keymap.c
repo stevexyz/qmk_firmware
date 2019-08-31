@@ -41,7 +41,8 @@ enum layers {
 };
 
 enum custom_keycodes {
-  CK_TRIPLEZERO = SAFE_RANGE,
+  CK_CONFIGINIT = SAFE_RANGE,
+  CK_TRIPLEZERO,
 };
 
 enum {
@@ -161,7 +162,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | F11  | F12  |NumLay|LghLay| ____ | ____ | Power|SysReq|MouLay|Backsp|      |
+ * |      | F11  | F12  |NumLay|LghLay| ____ |KbInit| Power|SysReq|MouLay|Backsp|      |
  * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
@@ -175,7 +176,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LAYER_SYST] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         XXXXXXX, KC_F11, KC_F12, TG(LAYER_NUMONLY), TG(LAYER_LIGHTS), KC_NO, KC_NO, KC_POWER, KC_SYSREQ, TG(LAYER_MOUSE), KC_BSPC, XXXXXXX,
+         XXXXXXX, KC_F11, KC_F12, TG(LAYER_NUMONLY), TG(LAYER_LIGHTS), KC_NO, CK_CONFIGINIT, KC_POWER, KC_SYSREQ, TG(LAYER_MOUSE), KC_BSPC, XXXXXXX,
          XXXXXXX, MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_APP, MT(MOD_RSFT, KC_INS), XXXXXXX,
          XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_PSCR, KC_SLCK, KC_PAUS, MT(MOD_RSFT, KC_SPC), XXXXXXX, XXXXXXX ),
 
@@ -270,6 +271,11 @@ void matrix_scan_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case CK_CONFIGINIT:
+      if (record->event.pressed) {
+        eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
+      } // else { when released... }
+      break;
     case CK_TRIPLEZERO:
       if (record->event.pressed) {
         SEND_STRING("000");
