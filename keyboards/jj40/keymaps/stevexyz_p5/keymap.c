@@ -109,8 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |      |      |
- * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |      |
+ * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 | Baksp|      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
  * |------+------+------+------+-------------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |  ESC | Home | PgDn | PgUp |  End | Left | Down |  Up  | Right| Baksp| PgUp |      |
@@ -122,8 +122,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
   [LAYER_FUNC] = LAYOUT_ortho_4x12(
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC, XXXXXXX,
-         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, XXXXXXX, XXXXXXX,
+         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, XXXXXXX,
          MT(MOD_LSFT, KC_ESC), LT(LAYER_SYST, KC_HOME), KC_PGDN, MT(MOD_RALT, KC_PGUP), MT(MOD_LGUI, KC_END), MT(MOD_RGUI, KC_LEFT), MT(MOD_RALT, KC_DOWN), KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC), KC_PGUP, XXXXXXX,
          XXXXXXX, KC_LCTL, KC_LALT, KC_NO, MO(LAYER_SYST), KC_LSFT, KC_LALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), KC_HOME, KC_PGDN, KC_END ),
 
@@ -133,18 +133,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |      |
- * |      |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
- * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
- * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |   ~  |   _  |   +  |   {  |   }  |  |   |   :  |   "  |      |      |
- * |      |  TAB |   `  |   -  |   =  |   [  |   ]  |  \   |   ;  |   '  |  Del |MousUp|
- * |      | Shift|SysLay| ____ | AltGr| OSkey| OSkey| AltGr|SysLay| ____ | Shift| ____ |
- * |------+------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |      |      |      |      |      |   <  |   >  |   ?  |      |      |      |      |
- * |      |      | ____ | ____ | ____ | ____ |   ,  |   .  |   /  | ____ |MsLeft|MousDn|MsRigt|
- * |      |      | Ctrl |  Alt |SysLay| ____ | Shift|  Alt | Ctrl | Shift| ____ | ____ | ____ |
- * `------------------------------------------------------------------------------------------'
+ * |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |      |      |
+ * |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
+ * |------+------+------+------+-------------+------+------+------+------+------+------|
+ * |      |   ~  |   _  |   +  |   {  |   }  |  |   |   :  |   "  |      |      |      |
+ * |  TAB |   `  |   -  |   =  |   [  |   ]  |  \   |   ;  |   '  |  Del |MousUp|      |
+ * | Shift|SysLay| ____ | AltGr| OSkey| OSkey| AltGr|SysLay| ____ | Shift| ____ |      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * |      |      |      |      |      |   <  |   >  |   ?  |      |      |      |      |
+ * |      | ____ | ____ | ____ | ____ |   ,  |   .  |   /  | ____ |MsLeft|MousDn|MsRigt|
+ * |      | Ctrl |  Alt |SysLay| ____ | Shift|  Alt | Ctrl | Shift| ____ | ____ | ____ |
+ * `-----------------------------------------------------------------------------------'
  */
   [LAYER_NUMSYM] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
@@ -159,17 +159,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | F11  | F12  |NumLay|LghLay|MsSpd1|MsSpd2|MsSpd3|KbInit| Power|SysReq| Ins  |
- * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
- * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | F11  | F12  |NumLay|LghLay|MsSpd1|MsSpd2|MsSpd3|KbInit| Power|SysReq| Ins  |      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
+ * |------+------+------+------+-------------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | Caps | Mute | Vol- | Vol+ | Play | Next | ____ | ____ |OSMenu| Ins  |MsWhUp|
- * |      | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift| ____ |
- * |------+------+------+------+------+------+------|------+------+------+------+------+
+ * | Caps | Mute | Vol- | Vol+ | Play | Next | ____ | ____ |OSMenu| Ins  |MsWhUp|      |
+ * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift| ____ |      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      |      | ____ | ____ | ____ | ____ |PrnScr|ScrLck|Pause | ____ |MsBtn1|MsWhDn|MsBtn2|
- * |      |      | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | Shift| ____ | ____ | ____ |
- * `------------------------------------------------------------------------------------------'
+ * |      | ____ | ____ | ____ | ____ |PrnScr|ScrLck|Pause | ____ |MsBtn1|MsWhDn|MsBtn2|
+ * |      | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | Shift| ____ | ____ | ____ |
+ * `-----------------------------------------------------------------------------------'
  */
   [LAYER_SYST] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
@@ -184,23 +184,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      |NumLck| ____ |NumLay|  /   |  *   |  -   |  7   |  8   |  9   |Backsp|      |
- * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
- * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * |NumLck| ____ |NumLay|  /   |  *   |  -   |  7   |  8   |  9   |Backsp| Baksp|      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
+ * |------+------+------+------+-------------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | Tab  |  (   |  )   |  =   |  ,   |  +   |  4   |  5   |  6   | Enter|      |
- * |      | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift|      |
- * |------+------+------+------+------+------+------|------+------+------+------+------+
+ * | Tab  |  (   |  )   |  =   |  ,   |  +   |  4   |  5   |  6   | Enter|  Up  |      |
+ * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift| ____ |      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      |      | ____ | ____ | 000  |  .   |  0   |  1   |  2   |  3   |      |      |
- * |      |      | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | Shift|      |      |
+ * |      | ____ | ____ | 000  |  .   |  0   |  1   |  2   |  3   | Left | Down | Right|
+ * |      | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | Shift| ____ | ____ | ____ |
  * `-----------------------------------------------------------------------------------'
  */
   [LAYER_NUMONLY] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         KC_NLCK, KC_NO, TG(LAYER_NUMONLY), KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_P7, KC_P8, KC_P9, KC_BSPC, XXXXXXX, XXXXXXX,
-         MT(MOD_LSFT, KC_TAB), KC_LPRN, KC_RPRN, KC_EQUAL, KC_KP_COMMA, KC_KP_PLUS, KC_P4, KC_P5, KC_P6, MT(MOD_LSFT, KC_KP_ENTER), XXXXXXX, XXXXXXX,
-         XXXXXXX, KC_LCTL, KC_LALT, CK_TRIPLEZERO, KC_KP_DOT, KC_P0, KC_P1, KC_P2, MT(MOD_LSFT, KC_P3), XXXXXXX, XXXXXXX, XXXXXXX ),
+         KC_NLCK, KC_NO, TG(LAYER_NUMONLY), KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_P7, KC_P8, KC_P9, KC_BSPC, KC_BSPC, XXXXXXX,
+         MT(MOD_LSFT, KC_TAB), KC_LPRN, KC_RPRN, KC_EQUAL, KC_KP_COMMA, KC_KP_PLUS, KC_P4, KC_P5, KC_P6, MT(MOD_LSFT, KC_KP_ENTER), KC_UP, XXXXXXX,
+         XXXXXXX, KC_LCTL, KC_LALT, CK_TRIPLEZERO, KC_KP_DOT, KC_P0, KC_P1, KC_P2, MT(MOD_LSFT, KC_P3), KC_LEFT, KC_DOWN, KC_RIGHT ),
 
 /* Backlight adjustment Layer
  * ,-----------------------------------------------------------------------------------.
@@ -209,23 +209,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | ____ | ____ | ____ |LghLay| ____ | Hue+ | Sat+ | Val+ | ____ | Plain|      |
- * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
- * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | ____ | ____ | ____ |LghLay| ____ | Hue+ | Sat+ | Val+ | ____ | Plain|Toggle|      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
+ * |------+------+------+------+-------------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      | ____ | ____ |ModeFw|ModeBw| ____ | Hue- | Sat- | Val- | ____ |Toggle|      |
- * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
- * |------+------+------+------+------+------+------|------+------+------+------+------+
+ * | ____ | ____ |ModeFw|ModeBw| ____ | Hue- | Sat- | Val- | ____ |Toggle| Val+ |      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |      |      |Breath|Rainbw| Swirl| Snake|Knight| XMas |Gradnt| Test |      |      |
- * |      |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |      |      |
+ * |      |Breath|Rainbw| Swirl| Snake|Knight| XMas |Gradnt| Test |ModeBw| Val- |ModeFw|
+ * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * `-----------------------------------------------------------------------------------'
  */
   [LAYER_LIGHTS] = LAYOUT_ortho_4x12(
          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         KC_NO, KC_NO, KC_NO, TG(LAYER_LIGHTS), KC_NO, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, RGB_M_P, XXXXXXX, XXXXXXX,
-         KC_NO, KC_NO, RGB_MOD, RGB_RMOD, KC_NO, RGB_HUD, RGB_SAD, RGB_VAD, KC_NO, RGB_TOG, XXXXXXX, XXXXXXX,
-         XXXXXXX, RGB_MODE_BREATHE, RGB_MODE_RAINBOW, RGB_MODE_SWIRL, RGB_MODE_SNAKE, RGB_MODE_KNIGHT, RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST, XXXXXXX, XXXXXXX, XXXXXXX ),
+         KC_NO, KC_NO, KC_NO, TG(LAYER_LIGHTS), KC_NO, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, RGB_M_P, RGB_TOG, XXXXXXX,
+         KC_NO, KC_NO, RGB_MOD, RGB_RMOD, KC_NO, RGB_HUD, RGB_SAD, RGB_VAD, KC_NO, RGB_TOG, RGB_VAI, XXXXXXX,
+         XXXXXXX, RGB_MODE_BREATHE, RGB_MODE_RAINBOW, RGB_MODE_SWIRL, RGB_MODE_SNAKE, RGB_MODE_KNIGHT, RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST, RGB_RMOD, RGB_VAD, RGB_MOD ),
 
 };
 
