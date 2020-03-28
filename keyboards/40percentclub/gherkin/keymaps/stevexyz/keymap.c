@@ -26,9 +26,7 @@ enum layers {
   LAYER_HOME, // home base layer
   LAYER_FUNC, // function keys and cursors
   LAYER_NUMSYM, // numbers and other characters
-  LAYER_SYST, // media and other system keys
-  LAYER_NUMONLY, // numeric keypad
-  LAYER_MOUSE, // mouse layer
+  LAYER_SYST, // media, mouse and other system keys
 };
 
 enum custom_keycodes {
@@ -116,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* System Layer
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
- * | F11  | F12  |NumLay|LghLay| ____ |KbInit| Power|SysReq|MouLay|Backsp|
+ * | F11  | F12  | Play | Next |MsWhlU|MsBtn1|OSMenu|SysReq|MsBtn2|Backsp|
  * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * |------+------+------+------+-------------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |
- * | Caps | Mute | Vol- | Vol+ | Play | Next | ____ | ____ |OSMenu| Ins  |
+ * | Caps | Mute | Vol- | Vol+ |MsWhlD|MsLeft|MSDown| MsUp |MsRigh| Ins  |
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift|
  * |------+------+------+------+------+------|------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |
@@ -129,49 +127,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `---------------------------------------------------------------------'
  */
   [LAYER_SYST] = LAYOUT_ortho_3x10(
-         KC_F11, KC_F12, TG(LAYER_NUMONLY), KC_NO, KC_NO, CK_CONFIGINIT, KC_POWER, KC_SYSREQ, TG(LAYER_MOUSE), KC_BSPC, 
-         MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_APP, MT(MOD_RSFT, KC_INS), 
+         KC_F11, KC_F12, KC_MPLY, KC_MNXT, KC_MS_WH_UP, KC_MS_BTN1, KC_APP, KC_SYSREQ, KC_MS_BTN2, KC_BSPC, 
+         MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MS_WH_DOWN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_UP, KC_MS_RIGHT, MT(MOD_RSFT, KC_INS), 
          XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_PSCR, KC_SLCK, KC_PAUS, MT(MOD_RSFT, KC_SPC), XXXXXXX ),
-
-/* Numeric Keypad
- * ,---------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |
- * |NumLck| ____ |NumLay|  /   |  *   |  -   |  7   |  8   |  9   |Backsp|
- * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
- * |------+------+------+------+-------------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |
- * | Tab  |  (   |  )   |  =   |  ,   |  +   |  4   |  5   |  6   | Enter|
- * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift|
- * |------+------+------+------+------+------|------+------+------+------+
- * |      |      |      |      |      |      |      |      |      |      |
- * |      | ____ | ____ | 000  |  .   |  0   |  1   |  2   |  3   |      |
- * |      | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | Shift|      |
- * `---------------------------------------------------------------------'
- */
-  [LAYER_NUMONLY] = LAYOUT_ortho_3x10(
-         KC_NLCK, KC_NO, TG(LAYER_NUMONLY), KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_P7, KC_P8, KC_P9, KC_BSPC, 
-         MT(MOD_LSFT, KC_TAB), KC_LPRN, KC_RPRN, KC_EQUAL, KC_KP_COMMA, KC_KP_PLUS, KC_P4, KC_P5, KC_P6, MT(MOD_LSFT, KC_KP_ENTER), 
-         XXXXXXX, KC_LCTL, KC_LALT, CK_TRIPLEZERO, KC_KP_DOT, KC_P0, KC_P1, KC_P2, MT(MOD_LSFT, KC_P3), XXXXXXX ),
-
-/* Mouse emulation Layer
- * ,---------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |
- * | Btn1 |  Up  | Btn2 | Whl+ | Accl0| Accl1| Accl2| ____ |MouLay| ____ |
- * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
- * |------+------+------+------+-------------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |
- * | Left | Down | Right| Whl- | ____ | ____ | ____ | ____ | ____ | Enter|
- * | ____ | ____ | ____ | ____ | OSkey| OSkey| AltGr| ____ | ____ | ____ |
- * |------+------+------+------+------+------|------+------+------+------+
- * |      |      |      |      |      |      |      |      |      |      |
- * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Space|      |
- * |      | Ctrl |  Alt | ____ | ____ | Shift|  Alt | Ctrl | Shift|      |
- * `---------------------------------------------------------------------'
- */
-  [LAYER_MOUSE] = LAYOUT_ortho_3x10(
-         KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, KC_MS_WH_UP, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_NO, TG(LAYER_MOUSE), KC_NO,
-         KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_LGUI, KC_RGUI, KC_RALT, KC_NO, KC_NO, KC_ENT,
-         XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_LSFT, KC_LALT, KC_RCTL, MT(MOD_RSFT, KC_SPC), XXXXXXX ),
 
 };
 
