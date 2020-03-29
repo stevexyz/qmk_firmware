@@ -1,4 +1,5 @@
-["Esc\n\n\n\nF1","Q\n\n\n\nF2","W\n\n\n\nF3","E\n\n\n\nF4","R\n\n\n\nF5","T\n\n\n\nF6","Y\n\n\n\nF7","U\n\n\n\nF8","I\n\n\n\nF9","O\n\n\n\nF10","P\n\n\n\nF11","Back<br>Space\n\n\n\nF12"],
-[{w:1.25},"Tab\n\n\n\n1!","A\n\n\n\n2@","S\n\n\n\n3#","D\n\n\n\n4$",{n:true},"F\n\n\n\n5%","G\n\n\n\n6^","H\n\n\n\n7&",{n:true},"J\n\n\n\n8*","K\n\n\n\n9(","L\n\n\n\n0)",{w:1.75},"Enter"],
-[{w:2},"Shift","Z\n\n\n\n`~","X\n\n\n\n-_","C\n\n\n\n=+","V\n\n\n\n[{","B\n\n\n\n]}","N\n\n\n\n\\|","M\n\n\n\n;:","<\n.\n\n\n'\"","up\n\n\n\npgup",">\n,\n\n\n/?"],
-["Ctrl\n\n\n\nOS","Meta","Alt\n\n\n\nAltGr",{a:7,w:2.75},"",{w:2.25},"",{a:4},"Meta","left\n\n\n\nhome","down\n\n\n\npgdn","right\n\n\n\nend"]
+[{c:"#7c7c7c"},"Esc\n\n\nF1",{c:"#cccccc"},"Q\n\n\nF2","W\n\n\nF3","E\n\n\nF4","R\n\n\nF5","T\n\n\nF6","Y\n\n\nF7","U\n\n\nF8","I\n\n\nF9","O\n\n\nF10","P\n\n\nF11",{c:"#7c7c7c"},"Back<br>Space\n\n\nF12"],
+[{w:1.25},"Tab\n\n\n1!",{c:"#cccccc"},"A\n\n\n2@","S\n\n\n3#","D\n\n\n4$",{n:true},"F\n\n\n5%","G\n\n\n6^","H\n\n\n7&",{n:true},"J\n\n\n8*","K\n\n\n9(","L\n\n\n0)",{c:"#7c7c7c",w:1.75},"Enter\n\n\nDel"],
+[{w:2},"Shift",{c:"#cccccc"},"Z\n\n\n`~","X\n\n\n-_","C\n\n\n=+","V\n\n\n[{","B\n\n\n]}","N\n\n\n\\|","M\n\n\n;:","<,\n\n\n'\"",{c:"#be7a00"},"up\n\n\npgup",{c:"#cccccc"},">.\n\n\n/?"],
+[{c:"#7c7c7c"},"Ctrl\n\n\nOS","Meta\n\n\nIns","Alt\n\n\nAltGr",{c:"#cccccc",a:7,w:2.75},"",{w:2.25},"",{c:"#7c7c7c",a:4},"Meta\n\n\nIns",{c:"#be7a00"},"left\n\n\nhome","down\n\n\npgdn","right\n\n\nend"]
+
