@@ -53,7 +53,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  */
 
-
 /* Qwerty Home Layer
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
@@ -85,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ |SysLay| AltGr| OSkey| OSkey| AltGr| ____ |SysLay| Shift|
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |       
+ *        | ____ | ____ |      | ____ | ____ | ____ | ____ | ____ |       
  *        | Ctrl |  Alt | ____ |SysLay| Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
@@ -105,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift|SysLay| ____ | AltGr| OSkey| OSkey| AltGr|SysLay| ____ | Shift|
  * ' -----+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |   <  |   >  |   ?  |      |       
- *        | ____ | ____ | ____ | ____ |   ,  |   .  |   /  | ____ |       
+ *        | ____ | ____ | ____ |      |   ,  |   .  |   /  | ____ |       
  *        | Ctrl |  Alt |SysLay| ____ | Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
@@ -125,10 +124,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | Shift|
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        | ____ | ____ | ____ | ____ |PrnScr|ScrLck|Pause | ____ |       
+ *        | ____ | ____ |      |      |PrnScr|ScrLck|Pause | ____ |       
  *        | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | Shift|       
  *        '-------------------------------------------------------'       
- * simplified view
+ * simplified view (for media and mouse there are dedicated layers)
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
  * | F11  | F12  |      |      |      |      |OSMenu|SysReq|      |Backsp|
@@ -148,8 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          MT(MOD_LSFT, KC_CAPS), KC_MUTE, KC_VOLD, KC_VOLU, KC_MS_WH_DOWN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_UP, KC_MS_RIGHT, MT(MOD_RSFT, KC_INS), 
          XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_PSCR, KC_SLCK, KC_PAUS, MT(MOD_RSFT, KC_SPC), XXXXXXX ),
 
-    
- /* ArrowPad (mod su Q)
+ /* ArrowPad (mod su Q)  /------mouse-------\ /-----cursor-------\
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
  * |      |      |      |MsBtn1| MsUp |MsBtn2| Home |  Up  | PgUp |Backsp|
@@ -168,7 +166,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_NO, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, KC_HOME, KC_UP, KC_PGUP, KC_BSPC, 
          KC_LSFT, KC_NO, KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_LEFT, KC_DOWN, KC_RIGHT, KC_ENT, 
          XXXXXXX, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_DOWN, KC_PGDN, XXXXXXX ),
-
 
 /* NumPad (mod su W)
  * ,---------------------------------------------------------------------.
@@ -189,7 +186,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_NO, KC_NO, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_BSPC, KC_7, KC_8, KC_9, KC_0, 
          KC_LSFT, KC_NO, KC_NO, KC_KP_EQUAL, KC_KP_PLUS, KC_DOT, KC_4, KC_5, KC_6, KC_ENT, 
          XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_TAB, KC_COMM, KC_1, KC_2, KC_3, XXXXXXX ),
-
  
  /* MediaPad (mod su E)
  * ,---------------------------------------------------------------------.
@@ -210,7 +206,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_VOLU, KC_NO, KC_NO, 
          KC_LSFT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, 
          XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_NO, XXXXXXX ),  
-    
     
 };
 
@@ -263,6 +258,4 @@ void led_set_user(uint8_t usb_led) {
     writePinHigh(B0);
   }
 }
-
-
 
