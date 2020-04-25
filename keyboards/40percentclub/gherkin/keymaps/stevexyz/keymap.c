@@ -214,7 +214,7 @@ void matrix_init_user(void) {
   // eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
   // set num lock on at start (for numonly layer to work)
   if (!(host_keyboard_leds() & (1<<USB_LED_NUM_LOCK))) {
-      SEND_STRING(SS_TAP(X_NUMLOCK)); //register_code(KC_NUMLOCK); unregister_code(KC_NUMLOCK);
+      tap_code(KC_NUMLOCK);
   }
 }
 
@@ -223,11 +223,6 @@ void matrix_scan_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case CK_CONFIGINIT:
-      if (record->event.pressed) {
-        eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
-      } // else { when released... }
-      break;
     case CK_TRIPLEZERO:
       if (record->event.pressed) {
         SEND_STRING("000");
@@ -245,17 +240,8 @@ void keyboard_pre_init_user(void) {
   setPinOutput(B0);
 }
 
-void led_set_user(uint8_t usb_led) {
-  if (IS_LED_ON(usb_led, USB_LED_NUM_LOCK)) {
-    writePinLow(D5);
-  } else {
-    writePinHigh(D5);
-  }
-
-  if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
-    writePinLow(B0);
-  } else {
-    writePinHigh(B0);
-  }
+bool led_update_user(led_t led_state) {
+    writePin(D5, !led_state.num_lock);
+    writePin(B0, !led_state.caps_lock);
+    return false; // prevent keyboard from processing state
 }
-
