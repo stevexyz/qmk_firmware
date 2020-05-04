@@ -1,4 +1,4 @@
-# The 25% SuperMicro keyboard: The "Alpha 26" keymap on Gherkin
+# The 25% SuperMicro keyboard: a pure "Alpha 26" keymap on Gherkin
 
 With this configuration the "SuperMicro" layout first experimented on the plank-like jj40 is being ported to a more proper board.
 
