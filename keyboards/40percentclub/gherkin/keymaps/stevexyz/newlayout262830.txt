@@ -1,4 +1,4 @@
-[{c:"#ffffff",w:10,d:true},"\nDefault layer",{x:0.75,w:10,d:true},"\n\nSuperMicro keyboard : The \"Alpha 26\" keymap on Gherkin\n\n\n\n\n(compatible also with the 28 and 30 layouts)"],
+[{c:"#ffffff",w:10,d:true},"\nDefault layer",{x:0.75,w:10,d:true},"\n\nSuperMicro keyboard : a pure - full featured - \"Alpha 26\" keymap on Gherkin\n\n\n\n\n(compatible also with the 28 and 30 layouts)"],
 [{c:"#cccccc"},"Q","W","E","R","T","Y","U","I","O","P"],
 [{y:-0.5,x:10.75,c:"#ffffff",w:10,d:true},"\n(modifiers; note that in system layer just horned keys are modified)"],
 [{y:-0.5,c:"#cccccc"},"A","S","D","F","G","H","J","K","L",{c:"#666666"},"Enter"],
@@ -18,6 +18,6 @@
 [{y:-0.5,c:"#b0b97e",f:3},"Play",{f:3},"Stop",{f:3},"Prev",{f:3},"Fwd",{f:3},"Left Click",{f:3},"←ms",{f:3},"↓ms",{f:3},"↑ms",{f:3},"→ms",{f:3},"Right Click"],
 [{f:3},"Back Space",{f:3},"Delete",{f:3},"PgDn",{f:3},"PgUp",{f:3},"App Menu",{f:3},"←",{f:3},"↓",{f:3},"↑",{f:3},"→",{c:"#585c3f",f:3},"Back<br>Space"],
 [{y:-0.5,x:10.75,c:"#000000",a:7},"",{c:"#ffffff"},"",{c:"#000000"},"",{c:"#ffffff"},"","",{c:"#000000"},"","","","",""],
-[{y:-0.5,c:"#2c2e1f",a:4,f:3},"PgDn",{c:"#b0b97e",f:3},"Caps Lock",{f:3},"Insert",{f:3},"Enter",{f:3},"Space",{f:3},"Volume Down",{f:3},"Volume Up",{f:3},"Mute Mic",{c:"#585c3f",f:3},"Space",{c:"#2c2e1f",f:3},"PgUp"],
+[{y:-0.5,c:"#2c2e1f",a:4,f:3},"PgDn",{c:"#b0b97e",f:3},"Caps Lock",{f:3},"Insert",{f:3},"Enter",{f:3},"Space",{f:3},"Mute",{f:3},"Volume Down",{f:3},"Volume Up",{c:"#585c3f",f:3},"Space",{c:"#2c2e1f",f:3},"PgUp"],
 [{y:-0.5,x:10.75,c:"#000000",a:7},"","",{c:"#ffffff"},"",{c:"#000000"},"",{c:"#ffffff"},"","",{c:"#000000"},"",{c:"#ffffff"},"","",""],
 [{x:10.75},"",{c:"#000000"},"",{c:"#ffffff"},"",{c:"#000000"},"",{c:"#ffffff"},"",{c:"#000000"},"","","",{c:"#ffffff"},"",""]
