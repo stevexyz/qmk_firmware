@@ -41,9 +41,10 @@ enum layers {
 };
 
 enum custom_keycodes {
-  CK_CONFIGINIT = SAFE_RANGE,
-  CK_TRIPLEZERO,
+  CK_TRIPLEZERO = SAFE_RANGE,
 };
+
+#define CK_CONFIGINIT EEPROM_RESET
 
 enum {
   TD_P_BSPC = 0,
@@ -271,11 +272,6 @@ void matrix_scan_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case CK_CONFIGINIT:
-      if (record->event.pressed) {
-        eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
-      } // else { when released... }
-      break;
     case CK_TRIPLEZERO:
       if (record->event.pressed) {
         SEND_STRING("000");
