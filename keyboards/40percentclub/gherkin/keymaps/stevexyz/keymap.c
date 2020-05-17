@@ -85,14 +85,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ |SysLay| AltGr| OSkey| OSkey| AltGr| ____ |SysLay| Shift|
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        |  F11 |  F12 |      | Space|PrnScr|ScrLck|Pause | Menu |       
+ *        |  F11 |  F12 |      | Space|PrnScr|ScrLck|Pause |Backsp|       
  *        | Ctrl |  Alt | ____ |SysLay| Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
   [LAYER_FUNC] = LAYOUT_ortho_3x10(
     KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, LT(LAYER_SYST, KC_F7), MT(MOD_LALT, KC_F8), MT(MOD_RCTL,KC_F9), MT(MOD_RSFT, KC_F10),
     MT(MOD_LSFT, KC_ESC), KC_HOME, LT(LAYER_SYST, KC_PGDN), MT(MOD_RALT, KC_PGUP), MT(MOD_LGUI, KC_END), MT(MOD_RGUI, KC_LEFT), MT(MOD_RALT, KC_DOWN), KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC),
-    KC_DOWN, MT(KC_LCTL, KC_F11), MT(KC_LALT, KC_F12), KC_NO, LT(LAYER_SYST, KC_SPACE), MT(KC_LSFT, KC_PSCR), MT(KC_LALT, KC_SLCK), MT(KC_RCTL, KC_PAUS), MT(MOD_RSFT, KC_MENU), KC_UP
+    KC_DOWN, MT(KC_LCTL, KC_F11), MT(KC_LALT, KC_F12), KC_NO, LT(LAYER_SYST, KC_SPACE), MT(KC_LSFT, KC_PSCR), MT(KC_LALT, KC_SLCK), MT(KC_RCTL, KC_PAUS), MT(MOD_RSFT, KC_BSPC), KC_UP
   ),
 
 /* Number and Symbols Layer
@@ -106,14 +106,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift|SysLay| ____ | AltGr| OSkey| OSkey| AltGr|SysLay| ____ | Shift|
  * ' -----+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |   <  |   >  |   ?  |      |       
- *        |BackSp|  Del | Enter|      |   ,  |   .  |   /  | SysRq|       
+ *        |BackSp|  Del | Enter|      |   ,  |   .  |   /  | Enter|       
  *        | Ctrl |  Alt |SysLay| ____ | Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
   [LAYER_NUMSYM] = LAYOUT_ortho_3x10(
     KC_1, KC_2, KC_3, KC_4, KC_5, LT(LAYER_SYST, KC_6), KC_7, MT(MOD_LALT, KC_8), MT(MOD_RCTL,KC_9), MT(MOD_RSFT, KC_0),
     MT(MOD_LSFT, KC_TAB), LT(LAYER_SYST, KC_GRV), KC_MINS, MT(MOD_RALT, KC_EQL), MT(MOD_LGUI, KC_LBRC), MT(MOD_RGUI, KC_RBRC), MT(MOD_RALT, KC_BSLS), LT(LAYER_SYST, KC_SCLN), KC_QUOT, MT(MOD_RSFT, KC_DEL),
-    KC_LEFT, MT(KC_LCTL, KC_BSPC), MT(KC_LALT, KC_DEL), LT(LAYER_SYST, KC_ENT), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_LALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_SYSREQ), KC_RGHT
+    KC_LEFT, MT(KC_LCTL, KC_BSPC), MT(KC_LALT, KC_DEL), LT(LAYER_SYST, KC_ENT), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_LALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_ENT), KC_RGHT
   ),
 
 /* System Layer
