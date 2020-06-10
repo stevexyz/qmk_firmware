@@ -1,2 +1,2 @@
-The only drawback I see is that System Layer is a bit uncomfortable for single key press.
-On System Layer there are: media keys, mouse, num pad nad prtscn, scrlck and pause.
+A full featured lauout inspired from the smaller Super Micro gherkin and jj40 sisters.
+There is the default key layer, then a function/numbers/symbols layer and then a system one where to find media/mouse/numpad (in addition to prtscn/scrlck/pause).
