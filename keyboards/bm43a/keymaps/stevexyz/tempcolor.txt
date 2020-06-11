@@ -1,8 +1,0 @@
-[{c:"#5ac9c2",fa:[0,0,0,2]},"Esc\n\n\nF1",{c:"#cccccc"},"Q\n\n\nF2\nPrtSc","W\n\n\nF3\nScrLk","E\n\n\nF4\nPause","R\n\n\nF5\n/","T\n\n\nF6\n*","Y\n\n\nF7\n7","U\n\n\nF8\n8","I\n\n\nF9\n9","O\n\n\nF10\n-","P\n\n\nF11\n=",{c:"#5ac9c2"},"Bcksp\n\n\nF12"],
-[{y:-0.25,x:12.25,c:"#cccccc",t:"#ffffff",a:7,w:1.5,h:0.5,d:true},"LEGENDA"],
-[{y:-0.75,c:"#8c8c8c",t:"#000000",a:4,w:1.25},"Tab\n\n\n!<br>1\nCapsLock",{c:"#cccccc"},"A\n\n\n@<br>2\nPlay","S\n\n\n#<br>3\nStop","D\n\n\n$<br>4\nPrev",{n:true},"F\n\n\n%<br>5\nNext","G\n\n\n^<br>6","H\n\n\n&<br>7\n4",{n:true},"J\n\n\n*<br>8\n5","K\n\n\n(<br>9\n6","L\n\n\n)<br>0\n+",{c:"#8c8c8c",w:1.75},"Enter\n\n\nDel"],
-[{y:-0.75,x:12.25,c:"#cccccc",w:1.5,h:1.5},"std<br> key\n\n\nmeta<br>key\nsystem key"],
-[{y:-0.25,c:"#8c8c8c",w:2},"Shift\n\n\nPermanent<br>System Layer",{c:"#cccccc"},"Z\n\n\n~<br>`\nSpkMute","X\n\n\n_<br>-\nVol-","C\n\n\n+<br>=\nVol+","V\n\n\n{<br>[\nMicMute","B\n\n\n}<br>]\n1","N\n\n\n|<br>\\\n2","M\n\n\n:<br>;\n3",",<\n\n\n\"<br>'\nL.Click",{c:"#5ac9c2"},"Up\n\n\nPgUp\nMouse",{c:"#cccccc"},".>\n\n\n?<br>/\nR.Click"],
-[{c:"#8c8c8c"},"Ctrl\n\n\nOS",{c:"#e03333",t:"#845401\n\n\n#000000"},"Meta\n\n\nMenu",{c:"#8c8c8c",t:"#000000"},"Alt",{a:7,w:2.75},"",{a:4,w:2.25},"\n\nShift\n\n0",{c:"#e03333",t:"#845401\n\n\n#000000"},"Meta\n\n\nIns\n.",{c:"#5ac9c2",t:"#000000"},"Left\n\n\nHome","Down\n\n\nPgDn","Right\n\n\nEnd"],
-[{c:"#cccccc",t:"#ffffff",w:13.75,d:true},"System layer is activated temporarily with both meta together,<br> or else permanently tapping left shift with meta (until retapping again shift, meta or esc)"],
-[{t:"#000000",a:7},"",{c:"#5ac9c2"},"",{c:"#e03333"},"",{c:"#b7b7b7"},"",{c:"#8c8c8c"},""]
