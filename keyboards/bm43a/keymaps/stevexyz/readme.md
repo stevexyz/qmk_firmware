@@ -7,4 +7,4 @@ Notes:
 - The Windows/OS key is overlayed with the Esc one
 - To activate permanently the function/number/symbols layer you can use the "layer tap toggle" functionality (now set to the default 5 presses). For the system layer to be activated permanently is enough to hit shift in this layer (so with the two meta keys pressed)
 - From the System Layer you can "jump" to an additional Lights layer pressing the control key
-- Meta-Esc (or simply Esc from the System and Lights layers) and the keyboard is coming back to default key layer
+- Meta-Esc (or simply Esc from the System and Lights layers) and the keyboard is coming back to default key layer in case they are activated permanently
