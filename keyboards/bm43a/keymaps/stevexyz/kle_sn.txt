@@ -1,0 +1,3 @@
+[{c:"#8c8c8c",a:7,fa:[5]},"!<br>1",{c:"#cccccc"},"@<br>2\n\n\n\nA","#<br>3\n\n\n\nS","$<br>4\n\n\n\nD",{n:true},"%<br>5\n\n\n\nF","^<br>6\n\n\n\nG","&<br>7\n\n\n\nH",{n:true},"*<br>8\n\n\n\nJ","(<br>9\n\n\n\nK",")<br>0\n\n\n\nL",{c:"#8c8c8c"},"Del"],
+[{x:1.5,c:"#cccccc"},"~<br>`\n\n\n\nZ","_<br>-\n\n\n\nX","+<br>=\n\n\n\nC","{<br>[\n\n\n\nV","}<br>]\n\n\n\nB","|<br>\\\n\n\n\nN",":<br>;\n\n\n\nM","\"<br>'\n\n\n\n,",{x:0.5},"?<br>/\n\n\n\n."],
+[{y:-0.75,x:0.25,c:"#e80000"},""]
