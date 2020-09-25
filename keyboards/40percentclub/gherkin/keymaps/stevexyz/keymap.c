@@ -64,14 +64,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| FnNav|NumSym| AltGr| OSkey| OSkey| AltGr| FnNav|NumSym| Shift|
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        |   Z  |   X  |   C  |   V  |   B  |   N  |   M  | Space|       
+ *    ESC |   Z  |   X  |   C  |   V  |   B  |   N  |   M  | Space| Down  
  *        | Ctrl |  Alt | FnNav|NumSym| Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
   [LAYER_HOME] = LAYOUT_ortho_3x10(
     LT(LAYER_ARROWPAD, KC_Q), LT(LAYER_NUMPAD, KC_W), LT(LAYER_MEDIAPAD, KC_E), KC_R, KC_T, LT(LAYER_FUNC, KC_Y), LT(LAYER_NUMSYM, KC_U), MT(MOD_LALT, KC_I), MT(MOD_RCTL, KC_O), MT(MOD_RSFT, KC_P),
     MT(MOD_LSFT, KC_A), LT(LAYER_FUNC, KC_S), LT(LAYER_NUMSYM, KC_D), MT(MOD_RALT, KC_F), MT(MOD_LGUI, KC_G), MT(MOD_RGUI, KC_H), MT(MOD_RALT, KC_J), LT(LAYER_FUNC, KC_K), LT(LAYER_NUMSYM, KC_L), MT(MOD_RSFT, KC_ENT),
-    KC_DOWN, MT(MOD_LCTL, KC_Z), MT(MOD_LALT, KC_X), LT(LAYER_FUNC, KC_C), LT(LAYER_NUMSYM, KC_V), MT(MOD_LSFT, KC_B), MT(MOD_LALT, KC_N), MT(MOD_RCTL, KC_M), MT(MOD_RSFT, KC_SPC), KC_BSPC
+    KC_ESC, MT(MOD_LCTL, KC_Z), MT(MOD_LALT, KC_X), LT(LAYER_FUNC, KC_C), LT(LAYER_NUMSYM, KC_V), MT(MOD_LSFT, KC_B), MT(MOD_LALT, KC_N), MT(MOD_RCTL, KC_M), MT(MOD_RSFT, KC_SPC), KC_DOWN
   ),
 
 /* Function and Navigation Layer
@@ -85,14 +85,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ |SysLay| AltGr| OSkey| OSkey| AltGr| ____ |SysLay| Shift|
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        |  F11 |  F12 |      | Space|PrnScr|ScrLck|Pause |Backsp|       
+ *   Left |  F11 |  F12 |      | Space|PrnScr|ScrLck|Pause |Backsp| PgDn  
  *        | Ctrl |  Alt | ____ |SysLay| Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
   [LAYER_FUNC] = LAYOUT_ortho_3x10(
     KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, LT(LAYER_SYST, KC_F7), MT(MOD_LALT, KC_F8), MT(MOD_RCTL,KC_F9), MT(MOD_RSFT, KC_F10),
     MT(MOD_LSFT, KC_ESC), KC_HOME, LT(LAYER_SYST, KC_PGDN), MT(MOD_RALT, KC_PGUP), MT(MOD_LGUI, KC_END), MT(MOD_RGUI, KC_LEFT), MT(MOD_RALT, KC_DOWN), KC_UP, LT(LAYER_SYST, KC_RGHT), MT(MOD_RSFT, KC_BSPC),
-    KC_DOWN, MT(KC_LCTL, KC_F11), MT(KC_LALT, KC_F12), KC_NO, LT(LAYER_SYST, KC_SPACE), MT(KC_LSFT, KC_PSCR), MT(KC_LALT, KC_SLCK), MT(KC_RCTL, KC_PAUS), MT(MOD_RSFT, KC_BSPC), KC_UP
+    KC_LEFT, MT(KC_LCTL, KC_F11), MT(KC_LALT, KC_F12), KC_NO, LT(LAYER_SYST, KC_SPACE), MT(KC_LSFT, KC_PSCR), MT(KC_LALT, KC_SLCK), MT(KC_RCTL, KC_PAUS), MT(MOD_RSFT, KC_BSPC), KC_PGDN
   ),
 
 /* Number and Symbols Layer
@@ -106,14 +106,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift|SysLay| ____ | AltGr| OSkey| OSkey| AltGr|SysLay| ____ | Shift|
  * ' -----+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |   <  |   >  |   ?  |      |       
- *        |BackSp|  Del | Enter|      |   ,  |   .  |   /  | Enter|       
+ *  Backsp|BackSp|  Del | Enter|      |   ,  |   .  |   /  | Enter| Del   
  *        | Ctrl |  Alt |SysLay| ____ | Shift|  Alt | Ctrl | Shift|       
  *        '-------------------------------------------------------'       
  */
   [LAYER_NUMSYM] = LAYOUT_ortho_3x10(
     KC_1, KC_2, KC_3, KC_4, KC_5, LT(LAYER_SYST, KC_6), KC_7, MT(MOD_LALT, KC_8), MT(MOD_RCTL,KC_9), MT(MOD_RSFT, KC_0),
     MT(MOD_LSFT, KC_TAB), LT(LAYER_SYST, KC_GRV), KC_MINS, MT(MOD_RALT, KC_EQL), MT(MOD_LGUI, KC_LBRC), MT(MOD_RGUI, KC_RBRC), MT(MOD_RALT, KC_BSLS), LT(LAYER_SYST, KC_SCLN), KC_QUOT, MT(MOD_RSFT, KC_DEL),
-    KC_LEFT, MT(KC_LCTL, KC_BSPC), MT(KC_LALT, KC_DEL), LT(LAYER_SYST, KC_ENT), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_LALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_ENT), KC_RGHT
+    KC_BSPC, MT(KC_LCTL, KC_BSPC), MT(KC_LALT, KC_DEL), LT(LAYER_SYST, KC_ENT), KC_NO, MT(MOD_LSFT, KC_COMM), MT(MOD_LALT, KC_DOT), MT(MOD_RCTL, KC_SLSH), MT(MOD_RSFT, KC_ENT), KC_DEL
   ),
 
 /* System Layer
@@ -127,14 +127,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        | Caps |  Ins | Enter| Space| Mute | Vol- | Vol+ | Space|       
+ *   PgUp | Caps |  Ins | Enter| Space| Mute | Vol- | Vol+ | Space| PgDn  
  *        | Ctrl |  Alt | ____ | ____ | Shift| Alt  | Ctrl | ____ |       
  *        '-------------------------------------------------------'       
  */
   [LAYER_SYST] = LAYOUT_ortho_3x10(
     KC_MPLY, KC_STOP, KC_MPRV, KC_MNXT, KC_MS_BTN1, KC_MS_LEFT, KC_MS_DOWN, KC_MS_UP, KC_MS_RIGHT, MT(MOD_RSFT, KC_MS_BTN2),
     KC_BSPC, KC_DEL, KC_PGDN, KC_PGUP, KC_APP, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_BSPC,
-    KC_PGDN, MT(KC_LCTL, KC_CAPS), MT(KC_LALT, KC_INS), KC_ENT, KC_SPC, MT(MOD_RSFT, KC_MUTE), MT(MOD_LALT, KC_VOLD), MT(MOD_RCTL, KC_VOLU), KC_SPC, KC_PGUP
+    KC_PGUP, MT(KC_LCTL, KC_CAPS), MT(KC_LALT, KC_INS), KC_ENT, KC_SPC, MT(MOD_RSFT, KC_MUTE), MT(MOD_LALT, KC_VOLD), MT(MOD_RCTL, KC_VOLU), KC_SPC, KC_PGDN
   ),
 
  /* ArrowPad (mod su Q)  /------mouse-------\ /-----cursor-------\
@@ -155,13 +155,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_ARROWPAD] = LAYOUT_ortho_3x10(
     KC_NO, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, KC_HOME, KC_UP, KC_PGUP, KC_BSPC, 
     KC_LSFT, KC_NO, KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_LEFT, KC_DOWN, KC_RIGHT, KC_ENT, 
-    XXXXXXX, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_PGDN, KC_PGDN, XXXXXXX 
+    KC_NO, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_PGDN, KC_PGDN, KC_NO 
   ),
 
 /* NumPad (mod su W)
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
- * |      |      |   3  |   *  |   -  |Backsp|   7  |   8  |   9  |  0   |
+ * |      |      |      |   *  |   -  |Backsp|   7  |   8  |   9  |  0   |
  * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * |------+------+------+------+-------------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |
@@ -169,14 +169,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        |      |      |      |  Tab |   ,  |   1  |   2  |   3  |       
+ *        |      |      |   3  |  Tab |   ,  |   1  |   2  |   3  |       
  *        | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | ____ |       
  *        '-------------------------------------------------------'       
  */
   [LAYER_NUMPAD] = LAYOUT_ortho_3x10(
-    KC_NO, KC_NO, KC_3, KC_KP_ASTERISK, KC_KP_MINUS, KC_BSPC, KC_7, KC_8, KC_9, KC_0, 
+    KC_NO, KC_NO, KC_NO, KC_KP_ASTERISK, KC_KP_MINUS, KC_BSPC, KC_7, KC_8, KC_9, KC_0, 
     KC_LSFT, KC_NO, KC_KP_SLASH, KC_KP_EQUAL, KC_KP_PLUS, KC_DOT, KC_4, KC_5, KC_6, KC_ENT, 
-    XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_TAB, KC_COMM, KC_1, KC_2, KC_3, XXXXXXX 
+    KC_NO, KC_LCTL, KC_LALT, KC_3, KC_TAB, KC_COMM, KC_1, KC_2, KC_3, KC_NO 
   ),
  
  /* MediaPad (mod su E)
@@ -197,7 +197,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_MEDIAPAD] = LAYOUT_ortho_3x10(
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_VOLU, KC_NO, KC_NO, 
     KC_LSFT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, 
-    XXXXXXX, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_NO, XXXXXXX 
+    KC_NO, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_NO, KC_NO
   ),  
     
 };
