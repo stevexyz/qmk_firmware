@@ -148,14 +148,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |        
- *        |      |      |MsWhlU|MsDown|MsWhlD|  End | PgDn | PgDn |       
+ *   PgUp |      |      |MsWhlU|MsDown|MsWhlD|  End | PgDn | PgDn | PgDn  
  *        | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | ____ |       
  *        '-------------------------------------------------------'       
  */
   [LAYER_ARROWPAD] = LAYOUT_ortho_3x10(
     KC_NO, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, KC_HOME, KC_UP, KC_PGUP, KC_BSPC, 
     KC_LSFT, KC_NO, KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_LEFT, KC_DOWN, KC_RIGHT, KC_ENT, 
-    KC_NO, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_PGDN, KC_PGDN, KC_NO 
+    KC_PGUP, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_PGDN, KC_PGDN, KC_PGDN 
   ),
 
 /* NumPad (mod su W)
@@ -169,14 +169,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *        |      |      |   3  |  Tab |   ,  |   1  |   2  |   3  |       
+ *  Backsp|      |      |   3  |  Tab |   ,  |   1  |   2  |   3  |  .    
  *        | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | ____ |       
  *        '-------------------------------------------------------'       
  */
   [LAYER_NUMPAD] = LAYOUT_ortho_3x10(
     KC_NO, KC_NO, KC_NO, KC_KP_ASTERISK, KC_KP_MINUS, KC_BSPC, KC_7, KC_8, KC_9, KC_0, 
     KC_LSFT, KC_NO, KC_KP_SLASH, KC_KP_EQUAL, KC_KP_PLUS, KC_DOT, KC_4, KC_5, KC_6, KC_ENT, 
-    KC_NO, KC_LCTL, KC_LALT, KC_3, KC_TAB, KC_COMM, KC_1, KC_2, KC_3, KC_NO 
+    KC_BSPC, KC_LCTL, KC_LALT, KC_3, KC_TAB, KC_COMM, KC_1, KC_2, KC_3, KC_DOT 
   ),
  
  /* MediaPad (mod su E)
