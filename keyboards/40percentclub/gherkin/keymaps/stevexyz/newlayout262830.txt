@@ -1,4 +1,4 @@
-[{c:"#ffffff",f:5,w:20,d:true},"SuperMicro keyboard : a pure - full featured - \"Alpha 26\" keymap on Gherkin compatible also with 27, 28 and 30 keys layouts"],
+[{c:"#ffffff",f:5,w:20,d:true},"SuperMicro keyboard: a pure -full featured- \"Alpha 26\" keymap on Gherkin, compatible also with 27, 28 and 30 keys layouts"],
 [{y:-0.5,w:10,d:true},"\nDefault layer",{x:0.75,w:10,d:true},"\n\n\nModifiers, valid in \"standard\", function, numbers and system layers<br>(note that in system layer just horned keys are modified)"],
 [{c:"#cccccc",f:3},"Q","W","E","R","T","Y","U","I","O","P",{x:0.75,c:"#aeaeae",a:7,fa:[2]},"Special layer 1","Special layer 2","Special layer 3","Special layer 4","Special layer 5",{c:"#bca84c"},"F",{c:"#a5cbb1"},"N",{c:"#aeaeae"},"Alt","Ctrl",{n:true},"Shift"],
 [{c:"#cccccc",a:4,f:3},"A",{f:3},"S",{f:3},"D",{f:3},"F",{f:3},"G",{f:3},"H",{f:3},"J",{f:3},"K",{f:3},"L",{c:"#666666",f:3},"Enter",{x:0.75,c:"#aeaeae",a:7,f:3},"Shift",{c:"#bca84c",f:3},"F",{c:"#a5cbb1",f:3},"N",{c:"#aeaeae",f:3},"AltGr",{f:3},"Win",{f:3},"Win",{f:3},"AltGr",{c:"#bca84c",f:3},"F",{c:"#a5cbb1",f:3},"N",{c:"#575757",f:3},"Shift"],
