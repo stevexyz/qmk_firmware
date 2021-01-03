@@ -9,9 +9,9 @@
 [{c:"#2f2a13"},"PgUp",{c:"#bca84c"},"F11","F12",{x:1},"Space","PrtSc SysRq","Scroll Lock","Pause Break",{c:"#5e5426"},"Space",{c:"#2f2a13"},"PgDn",{x:0.75,c:"#29322c"},"←",{c:"#a5cbb1"},"Back<br>Space","Delete","Enter",{x:1},"<\n,",">\n.","?\n/",{c:"#526558"},"Space",{c:"#29322c"},"→"],
 [{c:"#ffffff",f:5,w:10,d:true},"\nSystem (F+N) layer",{x:0.75,w:10,d:true},"\nNavigation \"special\" layer (Q)"],
 [{c:"#b0b97e",f:3},"Play","Stop","Prev","Fwd","Left Click","mouse<br>←","mouse<br>↓","mouse<br>↑","mouse<br>→","Right Click",{x:1.75,c:"#bccbbc",a:7},"","",{a:4},"Left Click","mouse<br>↑","Right Click","Home","↑","PgUp","Back Space"],
-[{c:"#b0b97e"},"Volume Down","Volume Up","PgDn","PgUp","App Menu","←","↓","↑","→",{c:"#585c3f"},"Back<br>Space",{x:0.75,c:"#bccbbc"},"Shift",{a:7},"","",{a:4},"mouse<br>←",{a:7},"",{a:4},"mouse<br>→","←",{a:7},"",{a:4},"→",{c:"#666666"},"Enter"],
+[{c:"#b0b97e"},"Volume Down","Volume Up","PgDn","PgUp","App Menu","←","↓","↑","→",{c:"#585c3f"},"Back<br>Space",{x:0.75,c:"#bccbbc"},"Shift",{a:7},"",{a:4},"PgDn","mouse<br>←",{a:7},"",{a:4},"mouse<br>→","←",{a:7},"",{a:4},"→",{c:"#666666"},"Enter"],
 [{c:"#2c2e1f"},"Home",{c:"#b0b97e"},"Back Space","Delete","Enter","Space","Mute","Caps Lock","Insert",{c:"#585c3f"},"Space",{c:"#2c2e1f"},"End",{x:0.75,c:"#333333",a:7},"",{c:"#bccbbc",a:4},"Ctrl","Alt","mouse<br>Wheel Down","mouse<br>↓","mouse<br>Wheel Up","End","↓",{c:"#666666"},"PgDn",{c:"#333333"},"Delete"],
 [{c:"#ffffff",f:5,w:10,d:true},"\nNumpad \"special\" layer (W)",{x:0.75,w:10,d:true},"\nMultimedia \"special\" layer (E)"],
 [{c:"#bccbbc",a:7,f:3},"",{x:1,a:4},"3","=","/","*","7","8","9","0",{x:0.75,a:7},"","",{x:1},"","","","",{a:4},"Vol+",{a:7},"",""],
-[{a:4},"Shift",{a:7},"","",{a:4},"Tab","-","+","4","5","6",{c:"#666666"},"Enter",{x:0.75,c:"#bccbbc"},"Shift",{a:7},"","","","","",{a:4},"Prev","Play","Next",{c:"#666666"},"Mute"],
-[{c:"#333333",a:7},"",{c:"#bccbbc",a:4},"Ctrl","Alt",{a:7},"",{a:4},",",".","1","2",{c:"#666666"},"3",{c:"#333333"},"000",{x:0.75,a:7},"",{c:"#bccbbc",a:4},"Ctrl","Alt",{a:7},"","","","",{a:4},"Vol-",{c:"#666666",a:7},"",{c:"#333333"},""]
+[{a:4},"Shift",{a:7},"","",{a:4},"Tab","-","+","4","5","6",{c:"#666666"},"Enter",{x:0.75,c:"#bccbbc"},"Shift",{a:7},"","","","",{a:4},"Mute","Prev","Play","Next",{c:"#666666"},"Stop"],
+[{c:"#333333"},"Back Space",{c:"#bccbbc"},"Ctrl","Alt","Enter",",",".","1","2",{c:"#666666"},"3",{c:"#333333"},"000",{x:0.75,a:7},"",{c:"#bccbbc",a:4},"Ctrl","Alt",{a:7},"","","","",{a:4},"Vol-",{c:"#666666",a:7},"",{c:"#333333"},""]
