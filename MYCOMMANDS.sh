@@ -1,3 +1,5 @@
+git fetch upstream
+git merge upstream/master
 make git-submodule
 
 cd keyboards/jj40/keymaps/stevexyz/

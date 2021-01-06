@@ -1,4 +1,4 @@
-/* Copyright 2019 Stefano Marago'
+/* Copyright 2019-2021 Stefano Marago'
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,31 +14,41 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 /*
- * The 25% SuperMicro keyboard: a pure - full features - "Alpha 26" keymap on Gherkin, compatible also with 28 and 30 keys layouts
+ * The SuperMicro 25% keyboard: a pure -full features- "Alpha 26" keymap on Gherkin, compatible also with 28 and 30 keys layouts
  * See https://github.com/stevexyz/qmk_firmware/blob/master/keyboards/40percentclub/gherkin/keymaps/stevexyz/readme.md for more information
+ *  ____                     __  __ _                
+ * / ___|_   _ _ __  ___ _ _|  \/  (_) ___ _ __ ___  
+ * \___ \ | | | '_ \/ _ \ '_| |\/| | |/ __| '__/ _ \ 
+ *  ___)  |_| | |_)   __/ | | |  | | | (__| | | (_) |
+ * |____/\__,_| .__/\___|_| |_|  |_|_|\___|_|  \___/ 
+ *   ____ _   |_|        _    _        ___  ___    _
+ *  / ___| |__   ___ _ _| | _(_)_ __  |__ \| __|()//
+ * | |  _| '_ \ / _ \ '_| |/ / | '_ \   _) |__ \ // 
+ * | |_| | | | |  __/ | |   <| | | | | / _/ __) // 
+ *  \____|_| |_|\___|_| |_|\_\_|_| |_||____|___//()
  */
 
 
 #include QMK_KEYBOARD_H
 
 enum layers {
-  LAYER_HOME, // home base layer
-  LAYER_FUNC, // function keys and cursors
-  LAYER_NUMSYM, // numbers and other characters
-  LAYER_SYST, // media, mouse and other system keys
-  LAYER_ARROWPAD,
-  LAYER_NUMPAD,
-  LAYER_MEDIAPAD,
+  // "standard" layers
+  LAYER_HOME,     // home base layer
+  LAYER_FUNC,     // function keys and cursors
+  LAYER_NUMSYM,   // numbers and other characters
+  LAYER_SYST,     // media, mouse and other system keys
+  // "special" layers
+  LAYER_ARROWPAD, // mouse and arrows
+  LAYER_NUMPAD,   // numeric keypad
+  LAYER_MEDIAPAD, // media keys
+  LAYER_MIDI,     // experimental midi layer
+  LAYER_SPECIAL5, // to be personalized (maybe with joystick?)
 };
 
 enum custom_keycodes {
   CK_TRIPLEZERO = SAFE_RANGE,
 };
-
-
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
  * LEGEND:
@@ -53,11 +63,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  */
 
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
 /* Qwerty Home Layer
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
  * |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |
- * | Spec1| Spec2| Spec3| ____ | ____ | FnNav|NumSym|  Alt | Ctrl | Shift|
+ * | Spec1| Spec2| Spec3| Spec4| ____ | FnNav|NumSym|  Alt | Ctrl | Shift|
  * |------+------+------+------+-------------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |
  * |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  | Enter|
@@ -137,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_HOME, MT(KC_LCTL, KC_BSPC), MT(KC_LALT, KC_DEL), KC_ENT, KC_SPC, MT(MOD_RSFT, KC_MUTE), MT(MOD_LALT, KC_CAPS), MT(MOD_RCTL, KC_INS), KC_SPC, KC_END
   ),
 
- /* ArrowPad (mod su Q)  /------mouse-------\ /-----cursor-------\
+ /* ArrowPad (mod on Q)  /------mouse-------\ /-----cursor-------\
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
  * |      |      |      |MsBtn1| MsUp |MsBtn2| Home |  Up  | PgUp |Backsp|
@@ -158,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_DOWN, KC_PGDN, KC_DEL 
   ),
 
-/* NumPad (mod su W)
+/* NumPad (mod on W)
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
  * |      |      |   3  |   =  |   /  |   *  |   7  |   8  |   9  |  0   |
@@ -169,17 +181,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |       
- *  Backsp|      |      | Enter|   ,  |   .  |   1  |   2  |   3  |  000    
+ *        |BackSp|  Del | Enter|   ,  |   .  |   1  |   2  |   3  |  000    
  *        | Ctrl |  Alt | ____ | ____ | ____ | ____ | ____ | ____ |       
  *        '-------------------------------------------------------'       
  */
   [LAYER_NUMPAD] = LAYOUT_ortho_3x10(
     KC_NO, KC_NO, KC_3, KC_KP_EQUAL, KC_KP_SLASH, KC_KP_ASTERISK, KC_7, KC_8, KC_9, KC_0, 
     KC_LSFT, KC_NO, KC_NO, KC_TAB, KC_KP_MINUS, KC_KP_PLUS, KC_4, KC_5, KC_6, KC_ENT, 
-    KC_BSPC, KC_LCTL, KC_LALT, KC_ENT, KC_COMM, KC_DOT, KC_1, KC_2, KC_3, CK_TRIPLEZERO
+    KC_NO, KC_BSPC, KC_DEL, KC_ENT, KC_COMM, KC_DOT, KC_1, KC_2, KC_3, CK_TRIPLEZERO
   ),
  
- /* MediaPad (mod su E)
+ /* MediaPad (mod on E)
  * ,---------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |
  * |      |      |      |      |      |      |      | Vol+ |      |      |
@@ -200,8 +212,49 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_LCTL, KC_LALT, KC_NO, KC_NO, KC_NO, KC_NO, KC_VOLD, KC_NO, KC_NO
   ),  
     
+ /* MIDI (mod on R)
+ * ,---------------------------------------------------------------------.
+ * |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |TraspD|TraspU| OctDn| OctUp| ChDn | ChUp |
+ * | ____ | ____ | ____ |      | ____ | ____ | ____ | ____ | ____ | ____ |
+ * |------+------+------+------+-------------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |
+ * |  A#  |      |  C#  |  D#  |      |  F#  |  G#  |  A#  |      |  C#  |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
+ * '------+------+------+------+------+------|------+------+------+------'
+ *        |      |      |      |      |      |      |      |      |        
+ *    A   |  B   |  C   |  D   |  E   |  F   |  G   |  A   |  B   |  C    
+ *        | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |       
+ *        '-------------------------------------------------------'       
+ */
+  [LAYER_MIDI] = LAYOUT_ortho_3x10(
+    KC_NO,KC_NO, KC_NO, KC_NO, MI_TRNSD, MI_TRNSU, MI_OCTD,  MI_OCTU, MI_CHD, MI_CHU,
+    MI_As_1, KC_NO, MI_Cs_2, MI_Ds_2, KC_NO, MI_Fs_2, MI_Gs_2, MI_As_2, KC_NO, MI_Cs_3, 
+    MI_A_1, MI_B_1, MI_C_2, MI_D_2, MI_E_2, MI_F_2, MI_G_2, MI_A_2, MI_B_2, MI_C_3
+  ),  
+    
+ /* To be customized (mod on T)
+ * ,---------------------------------------------------------------------.
+ * |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |      |      |      |      |
+ * | ____ | ____ | ____ | ____ |      | ____ | ____ | ____ | ____ | ____ |
+ * |------+------+------+------+-------------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |      |      |      |      |
+ * | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
+ * '------+------+------+------+------+------|------+------+------+------'
+ *        |      |      |      |      |      |      |      |      |        
+ *        |      |      |      |      |      |      |      |      |       
+ *        | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |       
+ *        '-------------------------------------------------------'       
+ */
+  [LAYER_SPECIAL5] = LAYOUT_ortho_3x10(
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+  ),  
+    
 };
-
 
 void matrix_init_user(void) {
   // eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
