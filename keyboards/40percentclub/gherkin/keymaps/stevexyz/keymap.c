@@ -43,7 +43,7 @@ enum layers {
   LAYER_NUMPAD,   // numeric keypad
   LAYER_MEDIAPAD, // media keys
   LAYER_MIDI,     // experimental midi layer
-  LAYER_SPECIAL5, // to be personalized (maybe with joystick?)
+  LAYER_SPECIAL5, // to be defined (maybe joystick?)
 };
 
 enum custom_keycodes {
@@ -156,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * |------+------+------+------+-------------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |
- * |      |      | PgDn |MsLeft|MsDown|MsRigh| Left | Down | Right| Enter|
+ * |      |  Del | PgDn |MsLeft|MsDown|MsRigh| Left | Down | Right| Enter|
  * | Shift| ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
  * '------+------+------+------+------+------|------+------+------+------'
  *        |      |      |      |      |      |      |      |      |        
@@ -166,7 +166,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LAYER_ARROWPAD] = LAYOUT_ortho_3x10(
     KC_NO, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, KC_HOME, KC_UP, KC_PGUP, KC_BSPC, 
-    KC_LSFT, KC_NO, KC_PGDN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_LEFT, KC_DOWN, KC_RIGHT, KC_ENT, 
+    KC_LSFT, KC_DEL, KC_PGDN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_LEFT, KC_DOWN, KC_RIGHT, KC_ENT, 
     KC_NO, KC_LCTL, KC_LALT, KC_MS_WH_UP, KC_MS_DOWN, KC_MS_WH_DOWN, KC_END, KC_DOWN, KC_PGDN, KC_DEL 
   ),
 
