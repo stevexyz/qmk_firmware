@@ -1,3 +1,5 @@
+git remote set-url origin git@github.com:stevexyz/qmk_firmware 
+
 git fetch upstream
 git merge upstream/master
 make git-submodule
