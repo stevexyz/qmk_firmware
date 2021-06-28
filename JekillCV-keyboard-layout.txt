@@ -1,0 +1,4 @@
+[{w:1.5,h:1.25},"CPU",{x:0.25,w:3,h:1.25},"Battery",{x:0.25,w:3,h:1.25},"Display",{x:0.75},"Knob",{f:4,d:true},"\n\nJekill CV"],
+[{y:0.5,f:3},"Q","W","E","R","T","Y","U",{c:"#cc9f9f"},"I",{c:"#cccccc"},"O","P"],
+[{x:0.25},"A","S","D","F","G","H",{c:"#ccaaaa"},"J",{c:"#cc9f9f"},"K","L",{x:0.25,c:"#cccccc",w:1.25,h:2,w2:1,h2:1,x2:-0.25},"Enter"],
+[{x:0.75},"Z","X",{c:"#ccaaaa"},"C","V",{c:"#cccccc"},"B","N","M",{f:1,w:1.75,w2:1},"(caps lock size)"]
