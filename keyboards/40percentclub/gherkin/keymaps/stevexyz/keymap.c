@@ -31,8 +31,11 @@
 
 
 #include QMK_KEYBOARD_H
-//extern rgblight_config_t rgblight_config;
-//extern keymap_config_t keymap_config;
+//#include "muse.h"
+//#include "quantum.h"
+//#include "rgb.h"
+#include "rgblight.h"
+//#include "rgblight_list.h"
 
 enum layers {
   // "standard" layers
@@ -266,7 +269,7 @@ void keyboard_pre_init_user(void) {
 
 void matrix_init_user(void) {
   // eeconfig_init(); // reset keyboard to a standard default state; useful when new releases messup with eeprom values
-  backlight_enable();
+  rgblight_enable();
   if (!host_keyboard_led_state().num_lock) {
     // set num lock on at start (for numonly layer to work)
     tap_code(KC_NUMLOCK);
